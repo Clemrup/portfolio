@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Portfolio | Développeur Web</title>
+    <meta name="description" content="Portfolio de développeur web - Découvrez mes projets et réalisations">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">Portfolio</a>
+            <ul class="nav-links">
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#projets">Projets</a></li>
+                <li><a href="#clients">Travaux Clients</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="theme-toggle" id="themeToggle" aria-label="Changer le thème">
+                <span class="sun-icon">☀️</span>
+                <span class="moon-icon">🌙</span>
+            </button>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <span class="greeting">Bonjour, je suis</span>
+                <h1 class="name">Votre Nom</h1>
+                <h2 class="title">Développeur Web</h2>
+                <p class="description">
+                    Je crée des expériences web modernes et performantes. 
+                    Passionné par le code propre et le design élégant.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#projets" class="btn btn-primary">Voir mes projets</a>
+                    <a href="#contact" class="btn btn-secondary">Me contacter</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="avatar-placeholder">
+                    <span>👨‍💻</span>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- Projets Section -->
+    <section id="projets" class="projects-section">
+        <div class="container">
+            <h2 class="section-title">Mes Projets</h2>
+            <p class="section-subtitle">Découvrez les sites et applications que j'ai développés</p>
+            
+            <div class="projects-grid">
+                <!-- Projet 1 -->
+                <article class="project-card">
+                    <div class="project-image">
+                        <img src="https://placehold.co/600x400/3b82f6/ffffff?text=Projet+1" alt="Projet 1">
+                        <div class="project-overlay">
+                            <a href="https://votre-site-1.com" target="_blank" rel="noopener" class="btn btn-small">Voir le site</a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Nom du Projet 1</h3>
+                        <p>Description courte du projet. Technologies utilisées et objectifs atteints.</p>
+                        <div class="project-tags">
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">JavaScript</span>
+                        </div>
+                        <a href="https://votre-site-1.com" target="_blank" rel="noopener" class="project-link">
+                            Visiter le site →
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Projet 2 -->
+                <article class="project-card">
+                    <div class="project-image">
+                        <img src="https://placehold.co/600x400/8b5cf6/ffffff?text=Projet+2" alt="Projet 2">
+                        <div class="project-overlay">
+                            <a href="https://votre-site-2.com" target="_blank" rel="noopener" class="btn btn-small">Voir le site</a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Nom du Projet 2</h3>
+                        <p>Description courte du projet. Technologies utilisées et objectifs atteints.</p>
+                        <div class="project-tags">
+                            <span class="tag">React</span>
+                            <span class="tag">Node.js</span>
+                            <span class="tag">MongoDB</span>
+                        </div>
+                        <a href="https://votre-site-2.com" target="_blank" rel="noopener" class="project-link">
+                            Visiter le site →
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Projet 3 -->
+                <article class="project-card">
+                    <div class="project-image">
+                        <img src="https://placehold.co/600x400/10b981/ffffff?text=Projet+3" alt="Projet 3">
+                        <div class="project-overlay">
+                            <a href="https://votre-site-3.com" target="_blank" rel="noopener" class="btn btn-small">Voir le site</a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Nom du Projet 3</h3>
+                        <p>Description courte du projet. Technologies utilisées et objectifs atteints.</p>
+                        <div class="project-tags">
+                            <span class="tag">Vue.js</span>
+                            <span class="tag">Firebase</span>
+                            <span class="tag">Tailwind</span>
+                        </div>
+                        <a href="https://votre-site-3.com" target="_blank" rel="noopener" class="project-link">
+                            Visiter le site →
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Travaux Clients Section (Screenshots) -->
+    <section id="clients" class="clients-section">
+        <div class="container">
+            <h2 class="section-title">Travaux Clients</h2>
+            <p class="section-subtitle">Aperçu de projets réalisés pour mes clients (sites non publics)</p>
+            
+            <div class="gallery-grid">
+                <!-- Client 1 -->
+                <article class="gallery-item" data-index="0">
+                    <div class="gallery-image">
+                        <img src="https://placehold.co/800x600/f59e0b/ffffff?text=Client+1" alt="Projet Client 1">
+                        <div class="gallery-overlay">
+                            <span class="zoom-icon">🔍</span>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h3>Application E-commerce</h3>
+                        <p>Plateforme de vente en ligne sur mesure</p>
+                        <span class="client-badge">Projet Client</span>
+                    </div>
+                </article>
+
+                <!-- Client 2 -->
+                <article class="gallery-item" data-index="1">
+                    <div class="gallery-image">
+                        <img src="https://placehold.co/800x600/ec4899/ffffff?text=Client+2" alt="Projet Client 2">
+                        <div class="gallery-overlay">
+                            <span class="zoom-icon">🔍</span>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h3>Dashboard Analytics</h3>
+                        <p>Tableau de bord de gestion interne</p>
+                        <span class="client-badge">Projet Client</span>
+                    </div>
+                </article>
+
+                <!-- Client 3 -->
+                <article class="gallery-item" data-index="2">
+                    <div class="gallery-image">
+                        <img src="https://placehold.co/800x600/06b6d4/ffffff?text=Client+3" alt="Projet Client 3">
+                        <div class="gallery-overlay">
+                            <span class="zoom-icon">🔍</span>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h3>Application Mobile</h3>
+                        <p>App de réservation personnalisée</p>
+                        <span class="client-badge">Projet Client</span>
+                    </div>
+                </article>
+
+                <!-- Client 4 -->
+                <article class="gallery-item" data-index="3">
+                    <div class="gallery-image">
+                        <img src="https://placehold.co/800x600/84cc16/ffffff?text=Client+4" alt="Projet Client 4">
+                        <div class="gallery-overlay">
+                            <span class="zoom-icon">🔍</span>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h3>Site Vitrine Premium</h3>
+                        <p>Site corporate haut de gamme</p>
+                        <span class="client-badge">Projet Client</span>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal pour la galerie -->
+    <div class="modal" id="galleryModal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <button class="modal-nav modal-prev" id="modalPrev">❮</button>
+            <img src="" alt="Image agrandie" id="modalImage">
+            <button class="modal-nav modal-next" id="modalNext">❯</button>
+            <div class="modal-info">
+                <h3 id="modalTitle"></h3>
+                <p id="modalDescription"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Me Contacter</h2>
+            <p class="section-subtitle">Un projet en tête ? Discutons-en !</p>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span class="contact-icon">📧</span>
+                        <div>
+                            <h4>Email</h4>
+                            <a href="mailto:votre@email.com">votre@email.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">💼</span>
+                        <div>
+                            <h4>LinkedIn</h4>
+                            <a href="https://linkedin.com/in/votre-profil" target="_blank" rel="noopener">Mon profil LinkedIn</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">🐙</span>
+                        <div>
+                            <h4>GitHub</h4>
+                            <a href="https://github.com/votre-username" target="_blank" rel="noopener">Mon GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Nom</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Envoyer le message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Votre Nom. Tous droits réservés.</p>
+            <div class="footer-links">
+                <a href="https://github.com/votre-username" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://linkedin.com/in/votre-profil" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
