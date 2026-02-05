@@ -18,7 +18,6 @@
             <ul class="nav-links">
                 <li><a href="#accueil">Accueil</a></li>
                 <li><a href="#projets">Projets</a></li>
-                <li><a href="#clients">Travaux Clients</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <button class="theme-toggle" id="themeToggle" aria-label="Changer le thème">
@@ -80,6 +79,7 @@
                             <span class="tag">HTML</span>
                             <span class="tag">CSS</span>
                             <span class="tag">JavaScript</span>
+                            <span class="tag">Git</span>
                             <span class="tag">PostgreSQL</span>
                             <span class="tag">Supabase</span>
                             <span class="tag">Vercel</span>
@@ -99,15 +99,16 @@
                         </div>
                     </div>
                     <div class="project-info">                        
-                        <span class="project-status status-production">🟢 En production</span>      <!--<span class="project-status status-educational">📚 Projet éducatif</span>-->
-                        <h3>Trains-Catalog</h3>                                                     <!--<span class="project-status status-development">🔧 En développement</span>-->
-                        <p>Site dédié au recensement de trains observés depuis 2024,                <!--<span class="project-status status-archived">📦 Archivé</span>-->
-                            structuré par type de matériel, numéro, livrée, date et lieu d’observation, impliquant la conception
+                        <span class="project-status status-production">🟢 En production</span>                                      <!--<span class="project-status status-educational">📚 Projet éducatif</span>-->
+                        <h3>Trains-Catalog</h3>                                                                                     <!--<span class="project-status status-development">🔧 En développement</span>-->
+                        <p>Site dédié au recensement de trains observés depuis 2024,                                                <!--<span class="project-status status-archived">📦 Archivé</span>-->
+                            structuré par type de matériel, numéro, livrée, date et lieu d’observation, impliquant la conception    <!--<span class="project-status status-delivered">📤 Livré</span>-->
                             d’une base de données et d’interfaces de consultation. </p>
                         <div class="project-tags">
                             <span class="tag">HTML</span>
                             <span class="tag">CSS</span>
                             <span class="tag">JavaScript</span>
+                            <span class="tag">Git</span>
                             <span class="tag">PostgreSQL</span>
                             <span class="tag">Supabase</span>
                             <span class="tag">Vercel</span>
@@ -137,6 +138,7 @@
                             <span class="tag">JavaScript</span>
                             <span class="tag">PHP (PDO)</span>
                             <span class="tag">MySQL</span>
+                            <span class="tag">Git</span>
                             <span class="tag">XAMPP / Apache</span>
                             <span class="tag">Bash</span>
                         </div>
@@ -145,18 +147,6 @@
                         </a>
                     </div>
                 </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- Travaux Clients Section (Screenshots) -->
-    <section id="clients" class="clients-section">
-        <div class="container">
-            <h2 class="section-title">Travaux Clients</h2>
-            <p class="section-subtitle">Aperçu de projets réalisés pour mes clients (sites non publics)</p>
-            
-            <div class="gallery-grid">
-                <!-- Client 1 -->
                 <article class="gallery-item" data-index="0">
                     <div class="gallery-image">
                         <img src="https://placehold.co/800x600/f59e0b/ffffff?text=Client+1" alt="Projet Client 1">
@@ -165,54 +155,48 @@
                         </div>
                     </div>
                     <div class="gallery-info">
-                        <h3>Application E-commerce</h3>
-                        <p>Plateforme de vente en ligne sur mesure</p>
-                        <span class="client-badge">Projet Client</span>
+                        <span class="project-status status-delivered">📤 Livré</span>
+                        <h3>Mon Ecole et Moi</h3>
+                        <p>J'ai participé au développement d'un site web de gestion simple, sécurisée et adaptée 
+                            aux besoins spécifiques de Mon Ecole et Moi, une école Montessouri. Nous avons proposé
+                            une solution centralisant inscriptions, repas, facturation et communication, tout en étant
+                            accessible aussi bien sur PC que sur smartphone pour les parents et l’administration.</p>
+                        <div class="project-tags">
+                            <span class="tag">Laravel</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">PHP</span>
+                            <span class="tag">MySQL</span>
+                            <span class="tag">Git</span>
+                            <span class="tag">Docker</span>
+                            <span class="tag">PhpMyAdmin</span>
+                        </div>
                     </div>
                 </article>
-
-                <!-- Client 2 -->
-                <article class="gallery-item" data-index="1">
+                <article class="gallery-item" data-index="0">
                     <div class="gallery-image">
-                        <img src="https://placehold.co/800x600/ec4899/ffffff?text=Client+2" alt="Projet Client 2">
+                        <img src="https://placehold.co/800x600/f59e0b/ffffff?text=Client+1" alt="Projet Client 1">
                         <div class="gallery-overlay">
                             <span class="zoom-icon">🔍</span>
                         </div>
                     </div>
                     <div class="gallery-info">
-                        <h3>Dashboard Analytics</h3>
-                        <p>Tableau de bord de gestion interne</p>
-                        <span class="client-badge">Projet Client</span>
-                    </div>
-                </article>
-
-                <!-- Client 3 -->
-                <article class="gallery-item" data-index="2">
-                    <div class="gallery-image">
-                        <img src="https://placehold.co/800x600/06b6d4/ffffff?text=Client+3" alt="Projet Client 3">
-                        <div class="gallery-overlay">
-                            <span class="zoom-icon">🔍</span>
+                        <span class="project-status status-development">🔧 En développement</span>
+                        <h3>AUTOFIN-Controle</h3>
+                        <p>J’ai participé au développement d’un logiciel Windows permettant l’automatisation 
+                            de l’extraction de données financières et leur export au format Excel pour Mulhouse
+                            Alsace Agglomération (m2A). Nous avons proposé une solution intègrant une intelligence
+                            artificielle (LLM) afin de fiabiliser le traitement de différents formats de PDF et de
+                            réduire significativement le temps de saisie manuelle.</p>
+                        <div class="project-tags">
+                            <span class="tag">.NET</span>
+                            <span class="tag">C#</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">xaml</span>
+                            <span class="tag">SQLite</span>
+                            <span class="tag">Git</span>
+                            <span class="tag">LLM (IA)</span>
                         </div>
-                    </div>
-                    <div class="gallery-info">
-                        <h3>Application Mobile</h3>
-                        <p>App de réservation personnalisée</p>
-                        <span class="client-badge">Projet Client</span>
-                    </div>
-                </article>
-
-                <!-- Client 4 -->
-                <article class="gallery-item" data-index="3">
-                    <div class="gallery-image">
-                        <img src="https://placehold.co/800x600/84cc16/ffffff?text=Client+4" alt="Projet Client 4">
-                        <div class="gallery-overlay">
-                            <span class="zoom-icon">🔍</span>
-                        </div>
-                    </div>
-                    <div class="gallery-info">
-                        <h3>Site Vitrine Premium</h3>
-                        <p>Site corporate haut de gamme</p>
-                        <span class="client-badge">Projet Client</span>
                     </div>
                 </article>
             </div>
@@ -237,49 +221,35 @@
     <section id="contact" class="contact-section">
         <div class="container">
             <h2 class="section-title">Me Contacter</h2>
-            
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <span class="contact-icon">📧</span>
-                        <div>
-                            <h4>Email</h4>
-                            <a href="mailto:clemrup@gmail.com">clemrup@gmail.com</a>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <span class="contact-icon">🐙</span>
-                        <div>
-                            <h4>GitHub</h4>
-                            <a href="https://github.com/Clemrup" target="_blank" rel="noopener">Mon GitHub</a>
-                        </div>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span class="contact-icon">📧</span>
+                    <div>
+                        <h4>Email</h4>
+                        <a href="mailto:clemrup@gmail.com">clemrup@gmail.com</a>
                     </div>
                 </div>
-                
-                <form class="contact-form" id="contactForm">
-                    <div class="form-group">
-                        <label for="name">Nom</label>
-                        <input type="text" id="name" name="name" required>
+                <div class="contact-item">
+                    <span class="contact-icon">📞</span>
+                    <div>
+                        <h4>Téléphone</h4>
+                        <p>06 99 67 54 45</p>
                     </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">🗃️</span>
+                    <div>
+                        <h4>GitHub</h4>
+                        <a href="https://github.com/Clemrup" target="_blank" rel="noopener">Mon GitHub</a>
                     </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Envoyer le message</button>
-                </form>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 Clément RUPERT. Tous droits réservés.</p>
-        </div>
+        <p>&copy; 2026 Clément RUPERT. Tous droits réservés.</p>
     </footer>
 
     <script src="script.js"></script>
