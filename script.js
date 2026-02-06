@@ -1,24 +1,46 @@
 // ===== Données de la galerie =====
 const galleryData = [
     {
-        image: 'https://placehold.co/800x600/f59e0b/ffffff?text=Client+1',
-        title: 'Application E-commerce',
-        description: 'Plateforme de vente en ligne sur mesure'
+        title: 'Mon Ecole et Moi',
+        description: 'Site de gestion pour école Montessori',
+        images: [
+            'images/MON-accueil.png',
+            'images/MON-connexion_parents.png',
+            'images/MON-connexion_admin.png',
+            'images/MON-espace_parents.png',
+            'images/MON-gestion_cantine.png',
+            'images/MON-liste_enfants_parents.png',
+            'images/MON-gestion_eleves_admin.png',
+            'images/MON-gestion_repas_admin.png',
+            'images/MON-gestion_periscolaire_admin.png',
+            'images/MON-raport_repas_admin.png'
+        ],
+        alt: [
+            'accueil',
+            'connexion parents',
+            'connexion administration',
+            'espace parents',
+            'gestion cantine coté parents',
+            'liste enfants inscrits coté parents',
+            'gestion des inscrits coté administration',
+            'gestion des repas coté administration',
+            'gestion du périscolaire coté administration',
+            'raport des repas coté administration'
+        ]
     },
     {
-        image: 'https://placehold.co/800x600/ec4899/ffffff?text=Client+2',
-        title: 'Dashboard Analytics',
-        description: 'Tableau de bord de gestion interne'
-    },
-    {
-        image: 'https://placehold.co/800x600/06b6d4/ffffff?text=Client+3',
-        title: 'Application Mobile',
-        description: 'App de réservation personnalisée'
-    },
-    {
-        image: 'https://placehold.co/800x600/84cc16/ffffff?text=Client+4',
-        title: 'Site Vitrine Premium',
-        description: 'Site corporate haut de gamme'
+        title: 'AUTOFIN-Controle',
+        description: 'Logiciel d\'automatisation de données financières',
+        images: [
+            'https://placehold.co/800x600/f59e0b/ffffff?text=Screenshot+1',
+            'https://placehold.co/800x600/f97316/ffffff?text=Screenshot+2',
+            'https://placehold.co/800x600/ea580c/ffffff?text=Screenshot+3'
+        ],
+        alt: [
+            'Screenshot 1',
+            'Screenshot 2',
+            'Screenshot 3'
+        ]
     }
 ];
 
@@ -30,13 +52,11 @@ const galleryItems = document.querySelectorAll('.gallery-item');
 const modal = document.getElementById('galleryModal');
 const modalImage = document.getElementById('modalImage');
 const modalTitle = document.getElementById('modalTitle');
+const modalSubtitle = document.getElementById('modalSubtitle');
 const modalDescription = document.getElementById('modalDescription');
 const modalClose = document.getElementById('modalClose');
 const modalPrev = document.getElementById('modalPrev');
 const modalNext = document.getElementById('modalNext');
-const contactForm = document.getElementById('contactForm');
-
-let currentImageIndex = 0;
 
 // ===== Thème =====
 function initTheme() {
@@ -69,9 +89,66 @@ function closeMobileMenu() {
     mobileMenuBtn.classList.remove('active');
 }
 
+// ===== Carousel dans les gallery-items =====
+function initCarousels() {
+    document.querySelectorAll('.gallery-item').forEach((item, itemIndex) => {
+        const carousel = item.querySelector('.gallery-carousel');
+        if (!carousel) return;
+        
+        const images = carousel.querySelectorAll('.carousel-images img');
+        const prevBtn = carousel.querySelector('.carousel-prev');
+        const nextBtn = carousel.querySelector('.carousel-next');
+        const dotsContainer = carousel.querySelector('.carousel-dots');
+        const overlay = carousel.querySelector('.gallery-overlay');
+        
+        let currentSlide = 0;
+        
+        // Créer les dots
+        images.forEach((_, i) => {
+            const dot = document.createElement('button');
+            dot.classList.add('carousel-dot');
+            if (i === 0) dot.classList.add('active');
+            dot.addEventListener('click', (e) => {
+                e.stopPropagation();
+                goToSlide(i);
+            });
+            dotsContainer.appendChild(dot);
+        });
+        
+        const dots = dotsContainer.querySelectorAll('.carousel-dot');
+        
+        function goToSlide(index) {
+            images[currentSlide].classList.remove('active');
+            dots[currentSlide].classList.remove('active');
+            currentSlide = index;
+            images[currentSlide].classList.add('active');
+            dots[currentSlide].classList.add('active');
+        }
+        
+        prevBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            goToSlide((currentSlide - 1 + images.length) % images.length);
+        });
+        
+        nextBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            goToSlide((currentSlide + 1) % images.length);
+        });
+        
+        // Ouvrir la modal au clic sur l'overlay
+        overlay.addEventListener('click', () => {
+            openModal(itemIndex, currentSlide);
+        });
+    });
+}
+
 // ===== Modal Galerie =====
-function openModal(index) {
-    currentImageIndex = index;
+let currentGalleryIndex = 0;
+let currentImageIndex = 0;
+
+function openModal(galleryIndex, imageIndex = 0) {
+    currentGalleryIndex = galleryIndex;
+    currentImageIndex = imageIndex;
     updateModalContent();
     modal.classList.add('active');
     document.body.style.overflow = 'hidden';
@@ -83,20 +160,23 @@ function closeModal() {
 }
 
 function updateModalContent() {
-    const item = galleryData[currentImageIndex];
-    modalImage.src = item.image;
-    modalImage.alt = item.title;
-    modalTitle.textContent = item.title;
-    modalDescription.textContent = item.description;
+    const gallery = galleryData[currentGalleryIndex];
+    modalImage.src = gallery.images[currentImageIndex];
+    modalImage.alt = gallery.alt[currentImageIndex];
+    modalTitle.textContent = gallery.title;
+    modalSubtitle.textContent = modalImage.alt;
+    modalDescription.textContent = `${gallery.description} (${currentImageIndex + 1}/${gallery.images.length})`;
 }
 
 function nextImage() {
-    currentImageIndex = (currentImageIndex + 1) % galleryData.length;
+    const gallery = galleryData[currentGalleryIndex];
+    currentImageIndex = (currentImageIndex + 1) % gallery.images.length;
     updateModalContent();
 }
 
 function prevImage() {
-    currentImageIndex = (currentImageIndex - 1 + galleryData.length) % galleryData.length;
+    const gallery = galleryData[currentGalleryIndex];
+    currentImageIndex = (currentImageIndex - 1 + gallery.images.length) % gallery.images.length;
     updateModalContent();
 }
 
@@ -185,33 +265,32 @@ function initActiveNavigation() {
 // ===== Event Listeners =====
 function initEventListeners() {
     // Thème
-    themeToggle.addEventListener('click', toggleTheme);
+    if (themeToggle) themeToggle.addEventListener('click', toggleTheme);
     
     // Menu mobile
-    mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+    if (mobileMenuBtn) mobileMenuBtn.addEventListener('click', toggleMobileMenu);
     
     // Fermer menu mobile au clic sur un lien
-    navLinks.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', closeMobileMenu);
-    });
-    
-    // Galerie
-    galleryItems.forEach((item, index) => {
-        item.addEventListener('click', () => openModal(index));
-    });
+    if (navLinks) {
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+    }
     
     // Modal
-    modalClose.addEventListener('click', closeModal);
-    modalPrev.addEventListener('click', prevImage);
-    modalNext.addEventListener('click', nextImage);
+    if (modalClose) modalClose.addEventListener('click', closeModal);
+    if (modalPrev) modalPrev.addEventListener('click', prevImage);
+    if (modalNext) modalNext.addEventListener('click', nextImage);
     
     // Fermer modal avec Escape ou clic extérieur
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal) closeModal();
-    });
+    if (modal) {
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
+        });
+    }
     
     document.addEventListener('keydown', (e) => {
-        if (!modal.classList.contains('active')) return;
+        if (!modal || !modal.classList.contains('active')) return;
         
         switch(e.key) {
             case 'Escape':
@@ -225,15 +304,13 @@ function initEventListeners() {
                 break;
         }
     });
-    
-    // Formulaire
-    contactForm.addEventListener('submit', handleFormSubmit);
 }
 
 // ===== Initialisation =====
 document.addEventListener('DOMContentLoaded', () => {
     initTheme();
     initEventListeners();
+    initCarousels();
     initSmoothScroll();
     initScrollAnimations();
     initActiveNavigation();

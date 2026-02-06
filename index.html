@@ -148,8 +148,22 @@
                     </div>
                 </article>
                 <article class="gallery-item" data-index="0">
-                    <div class="gallery-image">
-                        <img src="https://placehold.co/800x600/f59e0b/ffffff?text=Client+1" alt="Projet Client 1">
+                    <div class="gallery-carousel">
+                        <div class="carousel-images">
+                            <img src="images/MON-accueil.png" alt="accueil" class="active">
+                            <img src="images/MON-connexion_parents.png" alt="connexion parents">
+                            <img src="images/MON-connexion_admin.png" alt="connexion administration">
+                            <img src="images/MON-espace_parents.png" alt="espace parents">
+                            <img src="images/MON-gestion_cantine.png" alt="gestion cantine coté parents">
+                            <img src="images/MON-liste_enfants_parents.png" alt="liste enfants inscrits coté parents">
+                            <img src="images/MON-gestion_eleves_admin.png" alt="gestion des inscrits coté administration">
+                            <img src="images/MON-gestion_repas_admin.png" alt="gestion des repas coté administration">
+                            <img src="images/MON-gestion_periscolaire_admin.png" alt="gestion du périscolaire coté administration">
+                            <img src="images/MON-raport_repas_admin.png" alt="raport des repas coté administration">
+                        </div>
+                        <button class="carousel-btn carousel-prev">❮</button>
+                        <button class="carousel-btn carousel-next">❯</button>
+                        <div class="carousel-dots"></div>
                         <div class="gallery-overlay">
                             <span class="zoom-icon">🔍</span>
                         </div>
@@ -173,9 +187,16 @@
                         </div>
                     </div>
                 </article>
-                <article class="gallery-item" data-index="0">
-                    <div class="gallery-image">
-                        <img src="https://placehold.co/800x600/f59e0b/ffffff?text=Client+1" alt="Projet Client 1">
+                <article class="gallery-item" data-index="1">
+                    <div class="gallery-carousel">
+                        <div class="carousel-images">
+                            <img src="https://placehold.co/800x600/f59e0b/ffffff?text=Screenshot+1" alt="Mon Ecole et Moi - Screenshot 1" class="active">
+                            <img src="https://placehold.co/800x600/f97316/ffffff?text=Screenshot+2" alt="Mon Ecole et Moi - Screenshot 2">
+                            <img src="https://placehold.co/800x600/ea580c/ffffff?text=Screenshot+3" alt="Mon Ecole et Moi - Screenshot 3">
+                        </div>
+                        <button class="carousel-btn carousel-prev">❮</button>
+                        <button class="carousel-btn carousel-next">❯</button>
+                        <div class="carousel-dots"></div>
                         <div class="gallery-overlay">
                             <span class="zoom-icon">🔍</span>
                         </div>
@@ -208,10 +229,11 @@
         <div class="modal-content">
             <button class="modal-close" id="modalClose">&times;</button>
             <button class="modal-nav modal-prev" id="modalPrev">❮</button>
-            <img src="" alt="Image agrandie" id="modalImage">
+            <img src="" alt="" id="modalImage" style="max-width: 60vw;">
             <button class="modal-nav modal-next" id="modalNext">❯</button>
             <div class="modal-info">
                 <h3 id="modalTitle"></h3>
+                <h4 id="modalSubtitle"></h4>
                 <p id="modalDescription"></p>
             </div>
         </div>
