@@ -32,14 +32,22 @@ const galleryData = [
         title: 'AUTOFIN-Controle',
         description: 'Logiciel d\'automatisation de données financières',
         images: [
-            'https://placehold.co/800x600/f59e0b/ffffff?text=Screenshot+1',
-            'https://placehold.co/800x600/f97316/ffffff?text=Screenshot+2',
-            'https://placehold.co/800x600/ea580c/ffffff?text=Screenshot+3'
+            'images/AUTO-import.png',
+            'images/AUTO-pdf_importe.png',
+            'images/AUTO-selection_page.png',
+            'images/AUTO-selection_ligne.png',
+            'images/AUTO-agregation.png',
+            'images/AUTO-liste_agregation.png',
+            'images/AUTO-export.png'
         ],
         alt: [
-            'Screenshot 1',
-            'Screenshot 2',
-            'Screenshot 3'
+            'Page d\'importation',
+            'Page PDF "test" importé',
+            'Page de sélection des pages à traiter',
+            'Page de sélection des lignes à traiter',
+            'Page d\'agrégation des lignes',
+            'Page de la liste des agrégations réalisées',
+            'Page de mapping pour extraction dans tableau excel'
         ]
     }
 ];
