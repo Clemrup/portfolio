@@ -370,6 +370,9 @@ img {
     box-shadow: var(--shadow-xl);
     animation: float 6s ease-in-out infinite;
 }
+.avatar-placeholder, img {
+    border-radius: var(--radius-xl);
+}
 
 @keyframes float {
     0%, 100% { transform: translateY(0); }
