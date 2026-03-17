@@ -65,6 +65,7 @@ const modalDescription = document.getElementById('modalDescription');
 const modalClose = document.getElementById('modalClose');
 const modalPrev = document.getElementById('modalPrev');
 const modalNext = document.getElementById('modalNext');
+const contactForm = document.getElementById('contactForm');
 
 // ===== Thème =====
 function initTheme() {
@@ -195,14 +196,13 @@ function handleFormSubmit(e) {
     const formData = new FormData(contactForm);
     const name = formData.get('name');
     const email = formData.get('email');
+    const subject = formData.get('subject');
     const message = formData.get('message');
-    
-    // Ici vous pouvez ajouter votre logique d'envoi
-    // Par exemple avec Formspree, EmailJS, ou votre propre backend
-    
-    // Pour l'instant, on affiche juste une alerte
-    alert(`Merci ${name} ! Votre message a bien été envoyé.\n\nNote: Pour un vrai envoi, configurez un service comme Formspree ou EmailJS.`);
-    
+
+    const mailSubject = encodeURIComponent(`[Portfolio] ${subject}`);
+    const mailBody = encodeURIComponent(`Nom: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+    window.location.href = `mailto:clemrup@gmail.com?subject=${mailSubject}&body=${mailBody}`;
+
     contactForm.reset();
 }
 
@@ -284,6 +284,9 @@ function initEventListeners() {
             link.addEventListener('click', closeMobileMenu);
         });
     }
+
+    // Formulaire de contact
+    if (contactForm) contactForm.addEventListener('submit', handleFormSubmit);
     
     // Modal
     if (modalClose) modalClose.addEventListener('click', closeModal);

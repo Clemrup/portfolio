@@ -842,6 +842,21 @@ img {
     color: var(--text-secondary);
 }
 
+.contact-form {
+    margin-top: var(--spacing-xl);
+    padding: var(--spacing-lg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    background: var(--bg-secondary);
+    box-shadow: var(--shadow-sm);
+    max-width: 760px;
+}
+
+.contact-form h3 {
+    margin-bottom: var(--spacing-md);
+    font-size: var(--font-size-xl);
+}
+
 .form-group {
     display: flex;
     flex-direction: column;
@@ -874,6 +889,10 @@ img {
 .form-group textarea {
     resize: vertical;
     min-height: 120px;
+}
+
+.contact-form .btn {
+    margin-top: var(--spacing-sm);
 }
 
 /* ===== Footer ===== */
@@ -961,6 +980,10 @@ img {
 
     .contact-content {
         grid-template-columns: 1fr;
+    }
+
+    .contact-form {
+        max-width: 100%;
     }
 
     .footer .container {
